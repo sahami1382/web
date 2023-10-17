@@ -15,9 +15,9 @@
                 color: green;
             }
         </style>
-        <script>
+        <!-- <script>
             alert("سلام لطفا یک دقیقه وقت گذاشته و این رزومه را مطالعه فرمایید")
-        </script>
+        </script> -->
     </head>
 
     <body>
@@ -31,5 +31,23 @@
             <li id = "green">قرائت قرآن</li>
             <li class="blue">مکالمه انگلیسی</li>
         </ul>
+        <p id = "click">کلیک کنید</p>
+        <script>
+            function getName()
+            {
+                let data = {};
+                let state = confirm("Do you want to add?");
+                while(state == true){
+                    let firstName = prompt("name");
+                    let lastName = prompt("family");
+                    let age = prompt("age");
+
+                state = confirm("Do you want to add more?")
+                }
+            }
+            getName();
+            console.log(data)
+            document.getElementById("click").click(getName())
+    </script>
     </body>
 </html>
