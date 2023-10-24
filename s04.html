@@ -3,15 +3,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
+    <style>
+        header {
+            text-align: center;
+            font-size: large;
+        }
+        .sec{
+            background-color: lightblue;
+        }
+        #s1, #s2{
+            color: white;
+        }
+        #s3{
+            color: green;
+        }
+        #s4{
+            color: bisque;
+        }
+        #s5{
+            color: blue;
+        }
+        #s6{
+            color: red;
+        }
+        #s7{
+            color: yellowgreen;
+        }
+    </style>
 </head>
 <body dir="rtl">
     <header>مرتضی سهامی</header>
-    <section>سن : 20</section>
-    <section>مهارت ها:</section>
-    <section>1- قرائت قران</section>
-    <section>2- برنامه نویسی پایتون</section>
-    <section>3- حل روبیک</section>
-    <section>4- شعبده بازی</section>
-    <section>5- مکالمه به زبان انگلیسی</section>
+    <section class="sec" id = "s1">سن : 20</section>
+    <section class="sec" id = "s2">مهارت ها:</section>
+    <section class="sec" id = "s3">1- قرائت قران</section>
+    <section class="sec" id = "s4">2- برنامه نویسی پایتون</section>
+    <section class="sec" id = "s5">3- حل روبیک</section>
+    <section class="sec" id = "s6">4- شعبده بازی</section>
+    <section class="sec" id = "s7">5- مکالمه به زبان انگلیسی</section>
+    <section id = "s8">
+        <input type="text" id="clr">
+        <input type="button" id="sb" value="ok">
+    </section>
+
+    <script>
+        document.getElementById("sb").addEventListener("click", function(){
+            document.getElementById("s8").style.backgroundColor = 
+            document.getElementById("clr").value
+        })
+    </script>
 </body>
 </html>
