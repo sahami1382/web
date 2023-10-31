@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article id = "artcle">
+        <b>append html</b><br>
+        <input type="button" id="AddBtn" value="Add" /><br>
+    </article>
+    <article id = "artcle2">
+        
+    </article>
+    <article id = "article3">
+        <input type="button" id = "ShowBtn" value="Show">
+    </article>
+    <script>
+        document.getElementById("AddBtn").addEventListener('click', function() {
+            let temp = document.getElementById("artcle2").innerHTML;
+            document.getElementById("artcle2").innerHTML = temp + "<input type = 'text' id = 'fname' /><input type = 'text id = 'lname' /><br>"
+        })
+
+        document.getElementById("ShowBtn").addEventListener("click", function() {
+            console.log(temp)
+        })
+    </script>
+</body>
+</html>
