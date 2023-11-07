@@ -7,22 +7,22 @@
 <body>
     <article id = "artcle">
         <b>append html</b><br>
-        <input type="button" id="AddBtn" value="Add" /><br>
+        <input type="button" id="AddBtn" value="Add" />
+        <input type="button" id="ShowBtn" value="Show" /><br>
     </article>
-    <article id = "artcle2">
-        
-    </article>
-    <article id = "article3">
-        <input type="button" id = "ShowBtn" value="Show">
+    <article id = "artcle2"> 
     </article>
     <script>
-        document.getElementById("AddBtn").addEventListener('click', function() {
-            let temp = document.getElementById("artcle2").innerHTML;
-            document.getElementById("artcle2").innerHTML = temp + "<input type = 'text' id = 'fname' /><input type = 'text id = 'lname' /><br>"
+        name = document.getElementById("AddBtn").addEventListener('click', function() {
+            let firstName = document.createElement("input")
+            document.getElementById("artcle2").appendChild(firstName)
+            let lastName = document.createElement("input")
+            document.getElementById("artcle2").appendChild(lastName)
+            let enter = document.createElement("br")
+            document.getElementById("artcle2").appendChild(enter)
         })
-
-        document.getElementById("ShowBtn").addEventListener("click", function() {
-            console.log(temp)
+        document.getElementById("ShowBtn").addEventListener('click', function() {
+            return console.log(name)
         })
     </script>
 </body>
