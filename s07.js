@@ -21,6 +21,7 @@ function funcy(response){
     console.log("this is y");
     response.writeHead(200, headers);
     response.write("hello yyyyyyyy 4");
+    response.end();
 }
 
 function page1controller(response){
@@ -48,8 +49,16 @@ function page2controller(response){
     console.log("inside page2controller 1");
     fs.readFile("./square.html", "utf-8", function(error, data){
         console.log("page2controller 2");
-        console.log("page2controller 2 error", error);
-        console.log("page2controller 2 data", data);
+        if(error){
+            response.writeHead(200, headers.text);
+            response.write("ERROR 404");
+            response.end();
+        }
+        else{
+            response.writeHead(200, headers.html);
+            response.write(data);
+            response.end();
+        }
     })
     console.log("page2controller 3")
 }
