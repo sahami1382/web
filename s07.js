@@ -10,15 +10,19 @@ let headers = {
     html: {'Content-Type': 'Text/Html'}
 };
 
+function write(response, body, type){
+    response.writeHead(200, headers[type]);
+    response.write(body);
+    response.end();
+}
+
 function funcx(response){
-    console.log("this is x");
     response.writeHead(200, headers);
     response.write("hello xxxxxx 4");
     response.end();
 }
 
 function funcy(response){
-    console.log("this is y");
     response.writeHead(200, headers);
     response.write("hello yyyyyyyy 4");
     response.end();
@@ -82,3 +86,14 @@ function requestHandler(request, response) {
       obj[firstPart](response);
     }
   }
+
+function requestHandler2(request, response) {
+    console.log('url ', request.url);
+    console.log('splitted ', request.url.split('/'));
+    let firstPart = request.url.split('/')[1];
+
+    if (firstPart !== "favicon.ico") {
+        console.log('firstPart')
+    }
+
+}
