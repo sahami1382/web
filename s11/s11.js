@@ -1,5 +1,7 @@
 let http = require('http');
 let fs = require('fs');
+let fi = require("./index")
+let axios = require("axios")
 let port = 8037;
 let server = http.createServer(requestHandler);
 
@@ -19,14 +21,18 @@ function write(response, badaneh, type){
 }
 
 function funcx(request, response, data) {
-    console.log('this is x');
-    write(response, 'salam xxxxx', 'text');
-    console.log("Data inside x", data.length);
+    axios.post("http://127.0.0.1:8038/x", data)
+      .then(function (response2) {
+        console.log("SUCCESS status:", response2.status);
+        console.log("SUCCESS headers:", response2.headers);
+        console.log("SUCCESS data:", response2.data);
 
-    // response.writeHead(200, headers.text);
-    // response.write('salam xxxxx');
-    // response.end();
+        write(response, "hello x " + response2.data, "text");
 
+      })
+      .catch(function (error) {
+        console.log("ERROR:", error);
+      })
 }
 
 function funcy(request, response) {
@@ -232,7 +238,7 @@ let routes = {
     page2c: page2controllerC,
     page2d: page2controllerD,
     file: fileControllerB,
-    insertToFile: insertToFile.insertToFile
+    insertToFile: fi.insertToFile
 }
 
 function requestHandler(request, response) {

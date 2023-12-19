@@ -37,4 +37,4 @@ function insertToFileC(request, response, data){
     });
 }
 
-exports.inserToFile = insertToFileC;
+exports.insertToFile = insertToFileC;
