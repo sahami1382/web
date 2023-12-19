@@ -232,7 +232,7 @@ let routes = {
     page2c: page2controllerC,
     page2d: page2controllerD,
     file: fileControllerB,
-    insertToFile: insertToFileC
+    insertToFile: insertToFile.insertToFile
 }
 
 function requestHandler(request, response) {
